@@ -1,0 +1,779 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6ec,
+        #d8f3ff
+    );
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   TELAS
+======================================== */
+
+.tela {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   TELA INICIAL
+======================================== */
+
+.titulo h1 {
+    font-size: 50px;
+    color: #ff6fae;
+    margin-bottom: 10px;
+}
+
+.titulo p {
+    font-size: 20px;
+    color: #555;
+}
+
+.gatinhoInicial {
+    font-size: 140px;
+    margin: 40px 0;
+
+    animation: flutuar 2s infinite ease-in-out;
+}
+
+
+/* ========================================
+   BOTÕES GERAIS
+======================================== */
+
+button {
+    border: none;
+
+    background: #ff79b5;
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    padding: 15px 50px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 0 #d95791;
+
+    transition: 0.15s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: translateY(5px);
+    box-shadow: 0 1px 0 #d95791;
+}
+
+
+/* ========================================
+   TELA DO JOGO
+======================================== */
+
+#jogo {
+    position: relative;
+
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    padding: 0;
+
+    justify-content: flex-start;
+}
+
+
+/* ========================================
+   TÍTULO DO JOGO
+======================================== */
+
+#jogo > h1 {
+    position: absolute;
+
+    top: 15px;
+    left: 20px;
+
+    z-index: 20;
+
+    font-size: 28px;
+    color: #7b3fa1;
+
+    margin: 0;
+
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.8);
+}
+
+
+/* ========================================
+   ÁREA DO JOGO
+======================================== */
+
+.areaJogo {
+    position: absolute;
+    inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    background: #fff3dc;
+}
+
+
+/* ========================================
+   CENÁRIO
+======================================== */
+
+.cenario {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    z-index: 1;
+}
+
+
+/* ========================================
+   GATINHO
+======================================== */
+
+.gatinho {
+    position: absolute;
+
+    left: 50%;
+    top: 72%;
+
+    transform: translate(-50%, -50%);
+
+    cursor: pointer;
+    user-select: none;
+
+    z-index: 5;
+}
+
+.personagem {
+    width: 180px;
+    height: auto;
+
+    display: block;
+
+    user-select: none;
+    pointer-events: none;
+
+    filter: drop-shadow(
+        0 6px 5px rgba(0, 0, 0, 0.25)
+    );
+}
+
+
+/* ========================================
+   ANIMAÇÃO DO GATINHO
+======================================== */
+
+.gatinho.reagindo .personagem {
+    animation: pular 0.5s ease;
+}
+
+
+/* ========================================
+   MENSAGEM
+======================================== */
+
+.mensagem {
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    background: white;
+    color: #7b3fa1;
+
+    padding: 15px 25px;
+
+    border-radius: 25px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.status {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    z-index: 20;
+
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    max-width: 700px;
+}
+
+.statusItem {
+    width: 145px;
+
+    background: rgba(255, 255, 255, 0.93);
+
+    padding: 8px 10px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.statusItem span {
+    display: block;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: #6b4778;
+
+    margin-bottom: 5px;
+}
+
+
+/* ========================================
+   BARRAS DE STATUS
+======================================== */
+
+.barraStatus {
+    width: 100%;
+    height: 10px;
+
+    background: #e8dfe9;
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.preenchimento {
+    height: 100%;
+    width: 100%;
+
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+
+/* ========================================
+   CORES DOS STATUS
+======================================== */
+
+.felicidade {
+    background: #ff78b5;
+}
+
+.fome {
+    background: #ffad5c;
+}
+
+.energia {
+    background: #65b9ff;
+}
+
+.higiene {
+    background: #8edb9d;
+}
+
+
+/* ========================================
+   BARRA DE AÇÕES
+======================================== */
+
+.acoes {
+    position: absolute;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    display: flex;
+    gap: 15px;
+
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.93);
+
+    border-radius: 25px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ========================================
+   BOTÕES DE AÇÃO
+======================================== */
+
+.botaoAcao {
+    width: 120px;
+
+    padding: 10px;
+
+    border-radius: 18px;
+
+    font-size: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+}
+
+.botaoAcao span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   MENU DE MÚSICAS
+======================================== */
+
+#menuMusicas {
+    position: fixed;
+    inset: 0;
+
+    z-index: 100;
+
+    background: rgba(35, 20, 55, 0.65);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.caixaMusicas {
+    width: 100%;
+    max-width: 400px;
+
+    padding: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ffe0f0,
+        #d8f3ff
+    );
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 15px;
+}
+
+.caixaMusicas h2 {
+    color: #7b3fa1;
+    font-size: 26px;
+
+    margin-bottom: 10px;
+}
+
+.escolhaMusica {
+    width: 100%;
+
+    padding: 15px;
+
+    font-size: 18px;
+
+    border-radius: 18px;
+}
+
+#fecharMenuMusicas {
+    margin-top: 10px;
+
+    background: #9c85b5;
+
+    box-shadow: 0 6px 0 #6e568b;
+
+    font-size: 17px;
+    padding: 12px 25px;
+}
+
+
+/* ========================================
+   TELA DO GATINHO ROCKEIRO
+======================================== */
+
+#telaMusica {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    z-index: 90;
+
+    background: #160d25;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   VÍDEO DO GATINHO ROCKEIRO
+   AUMENTO VERTICAL DE 15%
+======================================== */
+
+#videoRock {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+
+    /* Mantém o vídeo inteiro como base */
+    object-fit: contain;
+
+    /* Mantém a largura e aumenta a altura em 15% */
+    scale: 1 1.15;
+
+    background: #160d25;
+
+    z-index: 1;
+}
+
+
+/* ========================================
+   CONTEÚDO DA TELA MUSICAL
+======================================== */
+
+.conteudoMusica {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px 20px;
+
+    pointer-events: none;
+}
+
+.conteudoMusica h1 {
+    color: white;
+
+    font-size: 35px;
+
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+#nomeMusica {
+    color: #ffe478;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    padding: 12px 25px;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    border-radius: 20px;
+}
+
+#voltarCasa {
+    pointer-events: auto;
+
+    font-size: 18px;
+
+    padding: 12px 25px;
+}
+
+
+/* ========================================
+   ESCONDER ELEMENTOS
+======================================== */
+
+.escondido,
+#menuMusicas.escondido,
+#telaMusica.escondido {
+    display: none;
+}
+
+
+/* ========================================
+   ANIMAÇÃO FLUTUAR
+======================================== */
+
+@keyframes flutuar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   ANIMAÇÃO PULAR
+======================================== */
+
+@keyframes pular {
+
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    40% {
+        transform: translateY(-25px) scale(1.08);
+    }
+
+    70% {
+        transform: translateY(5px) scale(1.03);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVIDADE — CELULAR E TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+    #jogo > h1 {
+        top: 8px;
+        left: 10px;
+        font-size: 20px;
+    }
+
+    .status {
+        top: 42px;
+
+        left: 10px;
+        right: 10px;
+
+        max-width: none;
+
+        gap: 6px;
+
+        justify-content: center;
+    }
+
+    .statusItem {
+        width: calc(50% - 3px);
+
+        padding: 6px 8px;
+
+        border-radius: 12px;
+    }
+
+    .statusItem span {
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+
+    .barraStatus {
+        height: 8px;
+    }
+
+    .gatinho {
+        top: 65%;
+    }
+
+    .personagem {
+        width: 130px;
+    }
+
+    .mensagem {
+        top: 30%;
+
+        max-width: 85%;
+
+        padding: 10px 15px;
+
+        font-size: 16px;
+
+        white-space: normal;
+    }
+
+    .acoes {
+        bottom: 10px;
+
+        left: 10px;
+        right: 10px;
+
+        transform: none;
+
+        width: auto;
+
+        gap: 6px;
+
+        padding: 8px;
+
+        border-radius: 18px;
+    }
+
+    .botaoAcao {
+        width: 20%;
+        min-width: 0;
+
+        padding: 7px 3px;
+
+        font-size: 22px;
+
+        border-radius: 14px;
+
+        gap: 2px;
+    }
+
+    .botaoAcao span {
+        font-size: 10px;
+    }
+
+    .caixaMusicas {
+        padding: 20px;
+    }
+
+    .caixaMusicas h2 {
+        font-size: 22px;
+    }
+
+    .conteudoMusica h1 {
+        font-size: 26px;
+    }
+
+    #nomeMusica {
+        font-size: 20px;
+    }
+
+}
+
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 450px) {
+
+    .titulo h1 {
+        font-size: 36px;
+    }
+
+    .titulo p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .gatinhoInicial {
+        font-size: 100px;
+        margin: 30px 0;
+    }
+
+    .personagem {
+        width: 115px;
+    }
+
+    .gatinho {
+        top: 64%;
+    }
+
+    .botaoAcao {
+        font-size: 20px;
+    }
+
+    .botaoAcao span {
+        font-size: 9px;
+    }
+
+    .conteudoMusica h1 {
+        font-size: 22px;
+    }
+
+    #voltarCasa {
+        font-size: 15px;
+    }
+
+}

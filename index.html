@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Gatinho Leaf 🐱</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="telaInicial" class="tela">
+    <div class="titulo"><h1>Meu Gatinho Leaf</h1><p>Um pequeno mundo ByClara</p></div>
+    <div class="gatinhoInicial">🐱</div>
+    <button id="botaoJogar">▶ JOGAR</button>
+  </div>
+
+  <div id="jogo" class="tela escondido">
+    <h1>🏠 Casa do Gatinho</h1>
+    <div class="status">
+      <div class="statusItem"><span>❤️ Felicidade</span><div class="barraStatus"><div id="barraFelicidade" class="preenchimento felicidade"></div></div></div>
+      <div class="statusItem"><span>🍗 Fome</span><div class="barraStatus"><div id="barraFome" class="preenchimento fome"></div></div></div>
+      <div class="statusItem"><span>⚡ Energia</span><div class="barraStatus"><div id="barraEnergia" class="preenchimento energia"></div></div></div>
+      <div class="statusItem"><span>🧼 Higiene</span><div class="barraStatus"><div id="barraHigiene" class="preenchimento higiene"></div></div></div>
+    </div>
+    <div class="areaJogo">
+      <img src="assets/cenario.png" class="cenario" alt="Casa do gatinho">
+      <div id="gatinho" class="gatinho"><img src="assets/personagem.png" class="personagem" alt="Gatinho"></div>
+      <div id="mensagem" class="mensagem escondido" aria-live="polite">Miau! Que bom te ver! ❤️</div>
+    </div>
+    <div class="acoes">
+      <button id="botaoComida" class="botaoAcao">🍗 <span>Dar comida</span></button>
+      <button id="botaoBrincar" class="botaoAcao">🎾 <span>Brincar</span></button>
+      <button id="botaoBanho" class="botaoAcao">🛁 <span>Dar banho</span></button>
+      <button id="botaoDormir" class="botaoAcao">😴 <span>Dormir</span></button>
+      <button id="botaoMusica" class="botaoAcao">🎸 <span>Ouvir música</span></button>
+    </div>
+  </div>
+
+  <!-- Mini menu para escolher a música -->
+  <div id="menuMusicas" class="modalMusica escondido" role="dialog" aria-modal="true" aria-labelledby="tituloMusicas">
+    <div class="cartaoMusica">
+      <h2 id="tituloMusicas">🎵 Escolha uma música</h2>
+      <div class="listaMusicas">
+        <button class="escolhaMusica" data-arquivo="bangbang.mp3">🎶 Bang Bang</button>
+        <button class="escolhaMusica" data-arquivo="dandan2.mp3">🎶 Dan Dan 2</button>
+        <button class="escolhaMusica" data-arquivo="HxH.mp3">🎶 HxH</button>
+        <button class="escolhaMusica" data-arquivo="shang.mp3">🎶 Shang</button>
+      </div>
+      <button id="fecharMenuMusicas" class="botaoSecundario">✖ Fechar</button>
+    </div>
+  </div>
+
+  <!-- Tela do vídeo e da música -->
+  <div id="telaMusica" class="tela telaMusica escondido">
+    <video id="videoRock" class="videoRock" src="assets/videos/gatinho_rock.mp4" autoplay muted loop playsinline preload="metadata"></video>
+    <div class="informacaoMusica">🎸 Gatinho Rockeiro <span id="nomeMusica"></span></div>
+    <button id="voltarCasa" class="voltarCasa">🏠 Voltar para Casa</button>
+  </div>
+
+  <audio id="audioMusica" preload="none"></audio>
+  <script src="game.js"></script>
+</body>
+</html>
