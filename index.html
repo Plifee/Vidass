@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Gatinho Leaf — ByClara</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  
+    <section id="telaInicial" class="tela">
+
+        <div class="titulo">
+            <h1>🐱 A vida de Leaf ByCLARA 🐱</h1>
+            <p>MUNDO FEITO PRA VOCE</p>
+        </div>
+
+        <div class="gatinhoInicial">🐈‍</div>
+
+        <button id="botaoJogar">
+            VAMOS LA 💜
+        </button>
+
+    </section>
+
+
+  
+    <section id="jogo" class="tela escondido">
+
+        <h1>🐱 Meu Gatinho Leaf</h1>
+
+        <div class="areaJogo">
+
+            <img
+                src="assets/cenario.png"
+                class="cenario"
+                alt="Casa do gatinho"
+            >
+
+            <div id="gatinho" class="gatinho">
+
+                <img
+                    src="assets/personagem.png"
+                    class="personagem"
+                    alt="Gatinho Leaf"
+                >
+
+            </div>
+
+            <div id="mensagem" class="mensagem escondido"></div>
+
+        </div>
+
+
+        <!-- STATUS -->
+        <div class="status">
+
+            <div class="statusItem">
+                <span>❤️ Felicidade</span>
+                <div class="barraStatus">
+                    <div id="barraFelicidade"
+                         class="preenchimento felicidade"></div>
+                </div>
+            </div>
+
+            <div class="statusItem">
+                <span>🍗 Fome</span>
+                <div class="barraStatus">
+                    <div id="barraFome"
+                         class="preenchimento fome"></div>
+                </div>
+            </div>
+
+            <div class="statusItem">
+                <span>⚡ Energia</span>
+                <div class="barraStatus">
+                    <div id="barraEnergia"
+                         class="preenchimento energia"></div>
+                </div>
+            </div>
+
+            <div class="statusItem">
+                <span>🛁 Higiene</span>
+                <div class="barraStatus">
+                    <div id="barraHigiene"
+                         class="preenchimento higiene"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- BOTÕES -->
+        <div class="acoes">
+
+            <button id="botaoComida" class="botaoAcao">
+                🍗
+                <span>Comida</span>
+            </button>
+
+            <button id="botaoBrincar" class="botaoAcao">
+                🎾
+                <span>Brincar</span>
+            </button>
+
+            <button id="botaoBanho" class="botaoAcao">
+                🛁
+                <span>Banho</span>
+            </button>
+
+            <button id="botaoDormir" class="botaoAcao">
+                😴
+                <span>Dormir</span>
+            </button>
+
+            <button id="botaoMusica" class="botaoAcao">
+                🎸
+                <span>Música</span>
+            </button>
+
+            <!-- NOVO BOTÃO -->
+            <button id="botaoAventura" class="botaoAcao">
+                🎮
+                <span>JOGAR</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU DE MÚSICAS -->
+    <div id="menuMusicas" class="escondido">
+
+        <div class="caixaMusicas">
+
+            <h2>🎸 Escolha uma música</h2>
+
+            <button class="escolhaMusica"
+                    data-arquivo="bangbang.mp3">
+                🎵 Bang Bang
+            </button>
+
+            <button class="escolhaMusica"
+                    data-arquivo="dandan2.mp3">
+                🎵 Dan Dan
+            </button>
+
+            <button class="escolhaMusica"
+                    data-arquivo="HxH.mp3">
+                🎵 Hunter x Hunter
+            </button>
+
+            <button class="escolhaMusica"
+                    data-arquivo="shang.mp3">
+                🎵 Shang
+            </button>
+
+            <button id="fecharMenuMusicas">
+                Fechar
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TELA DE MÚSICA -->
+    <section id="telaMusica" class="escondido">
+
+        <video
+            id="videoRock"
+            muted
+            loop
+            playsinline>
+        </video>
+
+        <audio id="audioMusica"></audio>
+
+        <div class="conteudoMusica">
+
+            <h1>🎸 Gatinho Rockeiro</h1>
+
+            <div id="nomeMusica"></div>
+
+            <button id="voltarCasa">
+                🏠 Voltar para Casa
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOVA TELA: AVENTURA -->
+    <section id="telaAventura" class="escondido">
+
+        <div class="hudAventura">
+
+            <h2>🌙 Floresta Sombria</h2>
+
+            <button id="voltarAventura">
+                🏠 Voltar para Casa
+            </button>
+
+        </div>
+
+        <canvas id="canvasAventura"></canvas>
+
+        <div class="controlesMobile">
+
+            <button id="controleEsquerda">⬅️</button>
+
+            <button id="controlePular">⬆️</button>
+
+            <button id="controleDireita">➡️</button>
+
+        </div>
+
+    </section>
+
+
+    <script src="game.js"></script>
+    <script src="plataforma.js"></script>
+
+</body>
+</html>
