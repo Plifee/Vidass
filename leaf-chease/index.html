@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaf Chase — A Jornada dos Guardiões</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="jogo">
+    <header class="hud">
+      <div class="personagemInfo"><h2>🐈‍⬛ Leaf</h2><p id="classeInfo">⚔️ Guerreiro | Nível 1</p></div>
+      <div class="status">
+        <label>❤️ Vida <span id="textoVida"></span></label><div class="barra"><div id="barraVida"></div></div>
+        <label>🔵 Mana <span id="textoMana"></span></label><div class="barra"><div id="barraMana"></div></div>
+        <label>⭐ Experiência <span id="textoExp"></span></label><div class="barra"><div id="barraExp"></div></div>
+      </div>
+      <div class="acoes"><button id="abrirClasses">🎭 Classes</button><a href="../index.html" class="voltar">🏠 Voltar</a></div>
+    </header>
+    <canvas id="canvasJogo"></canvas>
+    <div id="aviso" aria-live="polite"></div>
+    <div class="instrucoes">A/D: mover • Espaço: pular • Z: combo • X: especial • C: classes • Derrote todos e avance até o chefe</div>
+    <div class="controlesMobile">
+      <button id="esquerda" aria-label="Esquerda">⬅️</button>
+      <button id="direita" aria-label="Direita">➡️</button>
+      <button id="pular" aria-label="Pular">⬆️</button>
+      <button id="atacar" aria-label="Atacar">⚔️</button>
+      <button id="especial" aria-label="Especial">✨</button>
+    </div>
+    <section id="painelClasses" class="overlay escondido" aria-label="Seleção de classes">
+      <div class="modal"><div class="tituloModal"><h2>🎭 Classes do Leaf</h2><button id="fecharClasses">✖</button></div>
+        <p>Suba de nível para liberar novas classes. Sua evolução continua ao trocar de classe.</p>
+        <div id="listaClasses" class="gradeClasses"></div>
+      </div>
+    </section>
+    <section id="painelVitoria" class="overlay escondido"><div class="modal central"><h2>🏆 Fase 1 concluída!</h2><p>Você derrotou o Guardião das Sombras e libertou a floresta.</p><p>🎁 Recompensas e inventário serão adicionados futuramente.</p><a class="voltar" href="../index.html">🏠 Voltar para casa</a><button id="jogarNovamente">🔄 Repetir fase</button></div></section>
+    <section id="painelFim" class="overlay escondido"><div class="modal central"><h2>💔 Leaf foi derrotado!</h2><p>Tente novamente e continue sua jornada.</p><button id="reiniciarChase">🔄 Reiniciar</button></div></section>
+  </main>
+  <script src="jogo.js"></script>
+</body>
+</html>
